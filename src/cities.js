@@ -26,3 +26,6 @@ const cities = [
 ];
 
 export default cities;
+
+// API for photo: https://kitt.lewagon.com/placeholder/cities/:slug
+// so: https://kitt.lewagon.com/placeholder/cities/{this.props.city.slug}
