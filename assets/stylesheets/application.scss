@@ -18,14 +18,32 @@ body {
   .cities {
     width: 30%;
   }
+  .selected {
+    color: red;
+  }
+  .active-city-holder {
+    color: red;
+    letter-spacing: 2px;
+    text-align: right;
+    margin-right: 40px;
+  }
+  .lewagon-logo {
+    background-color: white;
+    width: 180px;
+    padding: 8px;
+    margin-left: 20px;
+  }
   .active-city {
-    width: 70%;
+    margin-top: 20vh;
+    width: 94%;
+    height: 60vh;
     margin-left: 20px;
     margin-bottom: 20px;
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid red;
     border-radius: 4px;
-    h3 {
+    h1 {
+      color: red;
       margin-top: 0;
     }
   }

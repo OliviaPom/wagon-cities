@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { selectCity } from '../actions';
+ 
 class City extends Component {
+
+  handleClick = () => {
+    this.props.selectCity(this.props.city)
+  }
+
   render() {
+    
+    let classes = "city";
+    if (this.props.city === this.props.activeCity) {
+      classes += " selected";
+    }
+
     return (
-      <div className ="city">
+      <div className ={classes} onClick={this.handleClick}>
         <h2>{this.props.city.name}</h2>
       </div>
     )
   }
 }
 
-export default City;
+function mapStateToProps(reduxState) {
+  return {
+    activeCity: reduxState.activeCity
+  }
+}
 
-// just want city.name in h2
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { selectCity: selectCity },
+    dispatch
+  );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(City);
